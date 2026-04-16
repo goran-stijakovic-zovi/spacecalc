@@ -1,7 +1,5 @@
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
-
     // Attempt to serve the requested asset from dist/
     const assetResponse = await env.ASSETS.fetch(request);
 
@@ -12,12 +10,6 @@ export default {
 
     // SPA fallback: serve index.html for all unmatched paths
     // so client-side navigation and direct URL loads work correctly
-    const indexUrl = new URL('/', url.origin);
-    const indexResponse = await env.ASSETS.fetch(new Request(indexUrl.toString(), request));
-
-    return new Response(indexResponse.body, {
-      status: 200,
-      headers: indexResponse.headers,
-    });
+    return env.ASSETS.fetch(new Request(new URL('/', request.url)));
   },
 };
