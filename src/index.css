@@ -1,0 +1,194 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Ant Design overrides */
+.ant-btn-primary {
+  color: #09090F !important;
+  font-weight: 600 !important;
+}
+
+.ant-btn-primary:hover {
+  box-shadow: 0 0 28px rgba(0, 212, 168, 0.4) !important;
+}
+
+.ant-select-dropdown {
+  background-color: #1A1A24 !important;
+  border: 1px solid #252530 !important;
+}
+
+.ant-select-item-option-content {
+  color: #FFFFFF;
+}
+
+.ant-select-item-option-selected .ant-select-item-option-content {
+  color: #00D4A8;
+}
+
+.ant-slider-mark-text {
+  color: #5C5C70 !important;
+  font-size: 12px;
+}
+
+.ant-input-number-input {
+  color: #FFFFFF !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #09090F; }
+::-webkit-scrollbar-thumb { background: #252530; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3A3A4A; }
+
+/* ── Zoom-into-office transition ─────────────────────────── */
+
+/* The background photo zooms toward the viewer — slow, cinematic */
+@keyframes zoomIntoOffice {
+  0%   { transform: scale(1.0);  filter: brightness(0.55); }
+  60%  { transform: scale(1.18); filter: brightness(0.62); }
+  100% { transform: scale(1.38); filter: brightness(0.2);  }
+}
+
+/* Dark fade-to-black — like stepping through a doorway */
+@keyframes flashWhite {
+  0%   { opacity: 0; }
+  45%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Calculator content fades in gently */
+@keyframes calcReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero text drifts out slowly */
+@keyframes heroTextOut {
+  0%   { opacity: 1; transform: translateY(0); }
+  40%  { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* ── Other animations ─────────────────────────────────────── */
+@keyframes slideInRight {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { transform: translateX(-40px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+@keyframes fadeUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes drawCheck {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.slide-in-right { animation: slideInRight 0.35s ease both; }
+.slide-in-left  { animation: slideInLeft  0.35s ease both; }
+.fade-up        { animation: fadeUp 0.4s ease both; }
+.fade-in        { animation: fadeIn 0.3s ease both; }
+
+.result-card-1 { animation: fadeUp 0.4s 0.00s ease both; }
+.result-card-2 { animation: fadeUp 0.4s 0.08s ease both; }
+.result-card-3 { animation: fadeUp 0.4s 0.16s ease both; }
+.result-card-4 { animation: fadeUp 0.4s 0.24s ease both; }
+
+/* ── Responsive layout helpers ─────────────────────────────── */
+
+/* Calculator 2-col → 1-col */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .calc-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .calc-grid-left {
+    padding-top: 0 !important;
+  }
+}
+
+/* Hero stats strip */
+.hero-stats {
+  display: flex;
+  padding: 0 clamp(24px, 6vw, 80px);
+}
+@media (max-width: 600px) {
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    padding: 0;
+  }
+  .hero-stat-item {
+    background: #0A0A0A;
+    padding: 20px 20px !important;
+    margin: 0 !important;
+    border-right: none !important;
+  }
+}
+
+/* How it works strip wraps on mobile */
+.hiw-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(20px, 4vw, 72px);
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .hiw-strip {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Hero CTA button row */
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-ctas button {
+    width: 100%;
+    justify-content: center;
+  }
+}

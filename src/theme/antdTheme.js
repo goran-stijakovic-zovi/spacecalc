@@ -1,0 +1,81 @@
+import { theme } from 'antd';
+
+export const antdTheme = {
+  algorithm: theme.darkAlgorithm,
+  token: {
+    colorBgBase:          '#0A0A0A',
+    colorBgContainer:     '#111114',
+    colorBgElevated:      '#1C1C20',
+    colorBorder:          '#222228',
+    colorPrimary:         '#00D4A8',
+    colorPrimaryHover:    '#00F0BF',
+    colorText:            '#FFFFFF',
+    colorTextSecondary:   '#9191A4',
+    colorTextPlaceholder: '#5C5C70',
+    colorError:           '#FF4D4F',
+    fontFamily:           "'Space Grotesk', system-ui, -apple-system, sans-serif",
+    fontSize:             16,
+    borderRadius:         8,
+    lineWidth:            1,
+  },
+  components: {
+    Button: {
+      colorPrimary:         '#00D4A8',
+      colorPrimaryHover:    '#00F0BF',
+      colorPrimaryActive:   '#00B890',
+      primaryShadow:        '0 0 20px rgba(0,212,168,0.25)',
+      borderRadiusLG:       6,
+      controlHeightLG:      52,
+      paddingInlineLG:      32,
+      fontSizeLG:           16,
+    },
+    Input: {
+      colorBgContainer:  '#1A1A24',
+      colorBorder:       '#252530',
+      activeBorderColor: '#00D4A8',
+      hoverBorderColor:  '#00D4A8',
+      activeShadow:      '0 0 0 2px rgba(0,212,168,0.15)',
+      controlHeightLG:   52,
+    },
+    InputNumber: {
+      colorBgContainer:  '#1A1A24',
+      colorBorder:       '#252530',
+      activeBorderColor: '#00D4A8',
+      hoverBorderColor:  '#00D4A8',
+      activeShadow:      '0 0 0 2px rgba(0,212,168,0.15)',
+      controlHeightLG:   52,
+    },
+    Select: {
+      colorBgContainer:  '#1A1A24',
+      colorBorder:       '#252530',
+      optionSelectedBg:  'rgba(0,212,168,0.12)',
+      optionActiveBg:    'rgba(255,255,255,0.04)',
+      controlHeightLG:   52,
+    },
+    Slider: {
+      colorPrimary:         '#00D4A8',
+      colorPrimaryBorder:   '#00D4A8',
+      trackBg:              '#00D4A8',
+      trackHoverBg:         '#00F0BF',
+      handleColor:          '#00D4A8',
+      handleActiveColor:    '#00F0BF',
+      dotActiveBorderColor: '#00D4A8',
+      railBg:               '#252530',
+      railHoverBg:          '#2E2E3E',
+    },
+    Modal: {
+      colorBgElevated: '#111117',
+      colorBorder:     '#252530',
+    },
+    Form: {
+      labelColor:    '#9191A4',
+      labelFontSize: 13,
+    },
+    Checkbox: {
+      colorPrimary: '#00D4A8',
+    },
+    Message: {
+      colorBgElevated: '#1A1A24',
+    },
+  },
+};
